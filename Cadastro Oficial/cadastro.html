@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>DermaClinics</title>
+    
+    <!-- Link para os ícones do Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Contêiner principal-->
+    <div class="container">
+        <!--Imagem do formulário-->
+        <div class="imagem-formulario">
+            <img src="img/undraw_undraw_undraw_undraw_sign_up_ln1s_-1-_s4bc_-1-_ee41_-1-_kf4d.svg" alt="Imagem de cadastro">
+        </div>
+
+        <!-- Seção do formulário de cadastro -->
+        <div class="formulario">
+            <form action="#">
+
+                <!-- Cabeçalho do formulário -->
+                <div class="cabecalho-formulario">
+                    <div class="titulo">
+                        <h1>Cadastre-se</h1>
+                    </div>
+
+                    <!-- Botão para voltar-->
+                    <div class="botao-voltar">
+                        <button><a href="inicio.html">Voltar</a></button>
+                    </div>
+                </div>
+
+                <div class="grupo-de-entrada">
+                    <!-- Campo para o primeiro nome -->
+                    <div class="caixa-de-entrada">
+                        <label for="firstname">Primeiro Nome</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+                    </div>
+
+                    <!-- Campo para o sobrenome -->
+                    <div class="caixa-de-entrada">
+                        <label for="lastname">Sobrenome</label>
+                        <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
+                    </div>
+
+                    <!-- Campo para o e-mail -->
+                    <div class="caixa-de-entrada">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <!-- Campo para o número de celular -->
+                    <div class="caixa-de-entrada">
+                        <label for="number">Celular</label>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                    </div>
+
+                    <!-- Campo para a senha -->
+                    <div class="caixa-de-entrada">
+                        <label for="password">Senha</label>
+                        <div class="password-container">
+                            <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                            <span class="toggle-password" onclick="togglePassword('password')">
+                                <span class="material-icons" style="font-size: 19px; color: #B7B7B7;">visibility</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Campo para confirmação de senha -->
+                    <div class="caixa-de-entrada">
+                        <label for="confirmPassword">Confirme sua Senha</label>
+                        <div class="password-container">
+                            <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirme sua senha" required>
+                            <span class="toggle-password" onclick="togglePassword('confirmPassword')">
+                                <span class="material-icons" style="font-size: 19px; color: #B7B7B7;">visibility</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção de seleção de gênero -->
+                <div class="entradas-de-genero">
+                    <div class="titulo-genero">
+                        <h6>Gênero</h6>
+                    </div>
+
+                    <div class="grupo-genero">
+                        <div class="entrada-genero">
+                            <input id="feminino" type="radio" name="genero">
+                            <label for="feminino">Feminino</label>
+                        </div>
+
+                        <div class="entrada-genero">
+                            <input id="masculino" type="radio" name="genero">
+                            <label for="masculino">Masculino</label>
+                        </div>
+
+                        <div class="entrada-genero">
+                            <input id="outros" type="radio" name="genero">
+                            <label for="outros">Outros</label>
+                        </div>
+
+                        <div class="entrada-genero">
+                            <input id="nao-declarar" type="radio" name="genero">
+                            <label for="nao-declarar">Prefiro não dizer</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="botao-continuar">
+                    <button><a href="proxima.html">Continuar</a></button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword(id) {
+            const passwordField = document.getElementById(id);
+            const icon = passwordField.nextElementSibling.querySelector('.material-icons');
+
+            
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.textContent = "visibility_off"; 
+            } else {
+                passwordField.type = "password";
+                icon.textContent = "visibility"; 
+            }
+        }
+    </script>
+
+<script src="cadastro.js"></script>
+
+</body>
+</html>
